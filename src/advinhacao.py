@@ -69,9 +69,12 @@ for rodada in range(1, total_tentativas + 1):
         pontuacao_atual = pontuacao_atual - pontuacao_perdida
 
         if (pontuacao_atual < 0):
-            print('Você zerou os pontos. Game Over!')
+            print('Você zerou os pontos. Game Over! O número secreto era: {}'.format(numero_secreto))
             pontuacao_atual = 0
             break
+
+        if (rodada == total_tentativas):
+            print('Game Over! O número secreto era: {}. Sua pontuação final foi: {}'.format(numero_secreto, pontuacao_atual))
         
     rodada += 1
 
