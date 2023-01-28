@@ -6,11 +6,33 @@ print("********************\n")
 
 # numero_secreto = round(random.random() * 100)
 numero_secreto = random.randrange(1,101)
+total_tentativas = 0
+opcao_invalida = True
+
+while (opcao_invalida == True):
+    print('\n')
+    print(f'Selecione o nível de dificuldade')
+    print(f'(1) Fácil')
+    print(f'(2) Intermediário')
+    print(f'(3) Hardcore')
+    nivel = int(input("Opção desejada: "))
+
+    if (nivel == 1):
+        total_tentativas = 20
+        opcao_invalida = False
+    elif (nivel == 2):
+        total_tentativas = 10
+        opcao_invalida = False
+    elif (nivel == 3):
+        total_tentativas = 5
+        opcao_invalida = False
+    else:
+        print('\n')
+        print('Opção inválida! Por favor, insira uma opção válida.')
 
 # print("Número secreto: {}".format(numero_secreto))
 print(f'Número secreto: {numero_secreto}')
 
-total_tentativas = 3
 
 for rodada in range(1, total_tentativas + 1):
     print("\nTentativa {} de {}".format(rodada, total_tentativas))
