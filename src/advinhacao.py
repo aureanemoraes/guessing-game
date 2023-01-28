@@ -33,6 +33,7 @@ while (opcao_invalida == True):
 # print("Número secreto: {}".format(numero_secreto))
 print(f'Número secreto: {numero_secreto}')
 
+pontuacao_atual = 200
 
 for rodada in range(1, total_tentativas + 1):
     print("\nTentativa {} de {}".format(rodada, total_tentativas))
@@ -63,6 +64,14 @@ for rodada in range(1, total_tentativas + 1):
             print("Você errou.. :( \nO número é menor que o valor correto.")
         else:
             print("Você errou... :(")
+
+        pontuacao_perdida = abs(numero_secreto - chute)
+        pontuacao_atual = pontuacao_atual - pontuacao_perdida
+
+        if (pontuacao_atual < 0):
+            print('Você zerou os pontos. Game Over!')
+            pontuacao_atual = 0
+            break
         
     rodada += 1
 
