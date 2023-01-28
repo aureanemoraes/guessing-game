@@ -80,3 +80,6 @@ def jogar():
         rodada += 1
 
     print("\n\n!!!Fim do jogo!!!")
+
+if (__name__ == "__main__"):
+    jogar()
